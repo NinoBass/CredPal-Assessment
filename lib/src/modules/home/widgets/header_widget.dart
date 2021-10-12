@@ -1,4 +1,3 @@
-import 'package:animations/animations.dart';
 import 'package:credpal/src/core/values/colors.dart';
 import 'package:credpal/src/core/values/strings.dart';
 import 'package:credpal/src/modules/home/controllers/home_controller.dart';

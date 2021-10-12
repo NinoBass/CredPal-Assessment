@@ -64,18 +64,17 @@ class WorkoutTile extends StatelessWidget {
                     const FitnessTabIndicator(color: lightBlue),
                   ],
                 ),
-                Text(
-                  isRecent ? recent + workout.workOut : workout.workOut,
-                  style: Get.textTheme.bodyText2!.copyWith(
-                    color: white,
-                    height: 0,
+                Flexible(
+                  child: Text(
+                    isRecent ? recent + workout.workOut : workout.workOut,
+                    style: Get.textTheme.caption!.copyWith(),
                   ),
                 ),
                 Text(
                   isRecent
                       ? workout.noOfExercises + done
                       : workout.noOfExercises,
-                  style: Get.textTheme.bodyText2!
+                  style: Get.textTheme.caption!
                       .copyWith(color: lightGrey, height: 0),
                 ),
               ],

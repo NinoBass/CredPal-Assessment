@@ -14,18 +14,19 @@ void main() {
   ]);
 
   runApp(
-    DevicePreview(
-      // enabled: false,
-      builder: (context) => GetMaterialApp(
-        defaultTransition: Transition.fade,
-        debugShowCheckedModeBanner: false,
-        title: "CredPal Assessment",
-        theme: appTheme,
-        initialRoute: AppPages.INITIAL,
-        getPages: AppPages.routes,
-        locale: DevicePreview.locale(context),
-        builder: DevicePreview.appBuilder,
-      ),
+    // DevicePreview(
+    //   // enabled: false,
+    //   builder: (context) =>
+    GetMaterialApp(
+      defaultTransition: Transition.fade,
+      debugShowCheckedModeBanner: false,
+      title: "CredPal Assessment",
+      theme: appTheme,
+      initialRoute: AppPages.INITIAL,
+      getPages: AppPages.routes,
+      // locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
     ),
+    // ),
   );
 }

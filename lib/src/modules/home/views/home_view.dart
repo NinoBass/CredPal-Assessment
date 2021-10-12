@@ -4,6 +4,7 @@ import 'package:credpal/src/data/data_source/local_data_source/recent_workout.da
 import 'package:credpal/src/modules/workout/views/workout_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animator/flutter_animator.dart';
 import 'package:get/get.dart';
 
 import '../controllers/home_controller.dart';
@@ -17,7 +18,8 @@ import '../widgets/spacing.dart';
 import '../widgets/workout_tile.dart';
 
 class HomeView extends GetView<HomeController> {
-  final scrollController = ScrollController(initialScrollOffset: 0.0);
+  final _scrollController = ScrollController();
+  final _key = GlobalKey<AnimatorWidgetState>();
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -38,7 +40,7 @@ class HomeView extends GetView<HomeController> {
               child: SizedBox(
                 width: double.infinity,
                 child: SingleChildScrollView(
-                  controller: scrollController,
+                  controller: _scrollController,
                   child: Stack(
                     alignment: Alignment.topCenter,
                     children: [
@@ -57,7 +59,12 @@ class HomeView extends GetView<HomeController> {
                             },
                           ),
                         ),
-                        WorkoutTab().marginOnly(top: 55),
+                        LightSpeedIn(
+                          preferences: const AnimationPreferences(
+                            duration: Duration(milliseconds: 500),
+                          ),
+                          child: WorkoutTab().marginOnly(top: 55),
+                        ),
                       ],
                     ],
                   ),

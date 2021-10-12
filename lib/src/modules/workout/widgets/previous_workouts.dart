@@ -2,6 +2,7 @@ import 'package:credpal/src/core/values/colors.dart';
 import 'package:credpal/src/data/data_source/local_data_source/dummy_workouts_list.dart';
 import 'package:credpal/src/modules/home/widgets/workout_tile.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animator/widgets/flippers/flip_in_x.dart';
 import 'package:get/get.dart';
 
 class PreviousWorkoutsOverlay extends GetView {
@@ -15,7 +16,8 @@ class PreviousWorkoutsOverlay extends GetView {
         children: previousWorkOutsList
             .asMap()
             .entries
-            .map((MapEntry map) => previousWorkouts(index: map.key as int))
+            .map((MapEntry map) =>
+                FlipInX(child: previousWorkouts(index: map.key as int)))
             .toList(),
       ),
     ).marginOnly(left: 10);
@@ -29,7 +31,7 @@ Widget previousWorkouts({required int index}) {
       borderRadius: BorderRadius.circular(20),
     ),
     margin: const EdgeInsets.only(right: 10),
-    width: Get.width * 0.6,
+    width: Get.width * 0.65,
     padding: const EdgeInsets.all(25),
     child: WorkoutTile(
       workout: previousWorkOutsList[index],
