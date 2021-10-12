@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:credpal/src/core/values/colors.dart';
 import 'package:credpal/src/core/values/strings.dart';
 import 'package:credpal/src/modules/home/controllers/home_controller.dart';
@@ -85,13 +86,19 @@ class WorkoutTab extends GetView {
             const VerticalSpace(size: 30),
             PreviousWorkoutsOverlay(),
             GestureDetector(
-              onTap: () {
+              onTap: () async {
                 homeController.animationKey1.currentState!.reverse();
-                homeController.showWorkoutTab = false;
-              },
-              onVerticalDragStart: (_) {
                 controller.animationKey2.currentState!.forward();
-                homeController.showWorkoutTab = false;
+                Future.delayed(const Duration(seconds: 1), () {
+                  homeController.showWorkoutTab = false;
+                });
+              },
+              onVerticalDragStart: (_) async {
+                homeController.animationKey1.currentState!.reverse();
+                controller.animationKey2.currentState!.forward();
+                Future.delayed(const Duration(seconds: 1), () {
+                  homeController.showWorkoutTab = false;
+                });
               },
               child: Row(
                 children: [

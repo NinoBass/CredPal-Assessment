@@ -50,16 +50,7 @@ class HomeView extends GetView<HomeController> {
                             horizontal: 35,
                           )
                           .marginOnly(top: 60),
-                      if (controller.showWorkoutTab) ...[
-                        SizedBox(
-                          height: Get.height,
-                          width: Get.width,
-                          child: GestureDetector(
-                            onTap: () {
-                              controller.showWorkoutTab = false;
-                            },
-                          ),
-                        ),
+                      if (controller.showWorkoutTab)
                         LightSpeedIn(
                           key: controller.animationKey1,
                           preferences: const AnimationPreferences(
@@ -67,7 +58,6 @@ class HomeView extends GetView<HomeController> {
                           ),
                           child: WorkoutTab().marginOnly(top: 55),
                         ),
-                      ],
                     ],
                   ),
                 ),
