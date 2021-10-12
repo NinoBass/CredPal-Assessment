@@ -83,12 +83,14 @@ class WorkoutTab extends GetView {
               ],
             ).marginSymmetric(horizontal: 30),
             const VerticalSpace(size: 30),
-            const PreviousWorkoutsOverlay(),
+            PreviousWorkoutsOverlay(),
             GestureDetector(
               onTap: () {
+                homeController.animationKey1.currentState!.reverse();
                 homeController.showWorkoutTab = false;
               },
               onVerticalDragStart: (_) {
+                controller.animationKey2.currentState!.forward();
                 homeController.showWorkoutTab = false;
               },
               child: Row(

@@ -19,7 +19,7 @@ import '../widgets/workout_tile.dart';
 
 class HomeView extends GetView<HomeController> {
   final _scrollController = ScrollController();
-  final _key = GlobalKey<AnimatorWidgetState>();
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -30,6 +30,7 @@ class HomeView extends GetView<HomeController> {
         }
       },
       child: SafeArea(
+        top: false,
         child: Obx(
           () => Scaffold(
             backgroundColor: controller.showWorkoutTab
@@ -60,6 +61,7 @@ class HomeView extends GetView<HomeController> {
                           ),
                         ),
                         LightSpeedIn(
+                          key: controller.animationKey1,
                           preferences: const AnimationPreferences(
                             duration: Duration(milliseconds: 500),
                           ),

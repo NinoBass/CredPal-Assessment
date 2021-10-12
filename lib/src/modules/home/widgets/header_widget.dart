@@ -32,13 +32,6 @@ class HeaderWidget extends GetView<HomeController> {
           style: Get.textTheme.bodyText2,
         ),
         const Spacer(),
-        // OpenContainer(
-        //   openBuilder: (_, __) => WorkoutTab(),
-        //   closedElevation: 0.0,
-        //   openColor: backdropColor,
-        //   middleColor: Colors.transparent,
-        //   closedColor: Colors.transparent,
-        //   closedBuilder: (_, __) =>
         Hero(
           tag: 'workout',
           transitionOnUserGestures: true,
