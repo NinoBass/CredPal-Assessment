@@ -1,0 +1,33 @@
+name: credpal
+version: 1.0.0+1
+publish_to: none
+description: A new Flutter project.
+environment:
+  sdk: '>=2.12.0 <3.0.0'
+
+dependencies:
+  animations: ^2.0.1
+  cupertino_icons: ^1.0.2
+  device_preview: ^0.7.4
+  flutter:
+    sdk: flutter
+  get: 4.3.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  lint: ^1.5.3
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/icons/
+  fonts:
+    - family: Avenir
+      fonts:
+        - asset: assets/fonts/AvenirBook.otf
+        - asset: assets/fonts/AvenirBlack.otf
+          weight: 700
+        - asset: assets/fonts/AvenirRoman.otf
+          weight: 600
