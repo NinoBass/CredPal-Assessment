@@ -33,6 +33,7 @@ class WorkoutTab extends GetView {
         margin: const EdgeInsets.symmetric(horizontal: 20),
         width: Get.width,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisSize: MainAxisSize.min,
           children: [
             Row(
@@ -100,6 +101,7 @@ class WorkoutTab extends GetView {
                   homeController.showWorkoutTab = false;
                 });
               },
+              behavior: HitTestBehavior.translucent,
               child: Row(
                 children: [
                   const Icon(
